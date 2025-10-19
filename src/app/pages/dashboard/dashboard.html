@@ -1,0 +1,48 @@
+<div class="dashboard-container">
+  <div class="page-header">
+    <h1 class="page-title">Users</h1>
+    <p class="page-subtitle">Manage and view all users</p>
+  </div>
+  
+  <div class="users-grid">
+    <div *ngFor="let user of users" class="user-card">
+      <div class="user-card-header">
+        <img [src]="user.photo" [alt]="user.name" class="user-avatar">
+        <div class="user-basic-info">
+          <h3 class="user-name">{{user.name}}</h3>
+          <p class="user-username">@{{user.username}}</p>
+        </div>
+      </div>
+      
+      <div class="user-card-body">
+        <div class="user-detail">
+          <span class="detail-label">Email:</span>
+          <span class="detail-value">{{user.email}}</span>
+        </div>
+        
+        <div class="user-detail">
+          <span class="detail-label">Company:</span>
+          <span class="detail-value">{{user.company}}</span>
+        </div>
+        
+        <div class="user-detail">
+          <span class="detail-label">Phone:</span>
+          <span class="detail-value">{{user.phone}}</span>
+        </div>
+        
+        <div class="user-detail">
+          <span class="detail-label">Address:</span>
+          <span class="detail-value">{{user.address}}</span>
+        </div>
+        
+        <div class="user-location">
+          <span class="location-text">{{user.state}}, {{user.country}} {{user.zip}}</span>
+        </div>
+      </div>
+      
+      <div class="user-card-footer">
+        <span class="user-id">ID: {{user.id}}</span>
+      </div>
+    </div>
+  </div>
+</div>
